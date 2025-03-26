@@ -1,5 +1,8 @@
+
+# the line below imports commands from the stats.py module
 from stats import get_word_count, get_character_count
 
+# main is set to print a number of words, and a character count.
 def main():
     print(f"{get_word_count()} words found in the document")
 

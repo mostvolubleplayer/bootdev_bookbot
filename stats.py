@@ -1,23 +1,24 @@
+# filepath is currently hardcoded to the frankenstein.txt file 
+#  inside the book directory.
 filepath = "./books/frankenstein.txt"
 
+# get_book_text reads the book in the filepath and returns the 
+#  contents as a string in the file_contents variable.
 def get_book_text(filepath):
     with open(filepath) as f:
         file_contents = f.read()
         return file_contents
 
-
+# get_word_count takes whatever book is hardcoded to filepath, 
+#  counts the words, and returns the number of words
 def get_word_count():
     output = get_book_text(filepath)
     word_list = output.split() 
     num_words = len(word_list)
     return num_words
 
-# to make a function call get_character_count, I need to:
-# 1. in STATS, break the book text into a dictionary of characters
-# 2. Convert any upper case characters into lower case characters
-# 3. set up the dictionary so that each instance of a character += an individual character counter in the dictionary
-# 4. return those results to the main.py
-# 5. Print those results using a get_character_count function call.
+# get_character_count is set up to use get_book_text, convert those 
+#  characters to all lower case, and then add and count each character.
 def get_character_count():
     char_count = {}
     text = get_book_text(filepath).lower()
@@ -27,5 +28,9 @@ def get_character_count():
         else:
             char_count[char] = 1
     return char_count
+
+# for sorting:
+#  1. return char_count dict with a reverse sort order
+# below 
         
         
