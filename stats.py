@@ -29,8 +29,23 @@ def get_character_count():
             char_count[char] = 1
     return char_count
 
-# for sorting:
-#  1. return char_count dict with a reverse sort order
-# below 
-        
+# below is how to sort a dictionary by number
+# define a new function
+
+def char_sort_by_number(char_dict):
+    #create an empty list to store the dictionaries
+    sorted_char_list = []
+    #convert each key-value pair in the dictionary to 
+    #a dictionary and add it to the list:
+    for char, count in char_dict.items():
+        sorted_char_list.append({"char": char, "count": count})
+    #define a sorting helper:
+    def sort_on(dict_item):
+        return dict_item["count"]
+    #perform the sort, indescending order - the sort_on defines the keyed item
+    sorted_char_list.sort(reverse=True, key=sort_on)
+    #return the sorted character list
+    return sorted_char_list
+
+
         
