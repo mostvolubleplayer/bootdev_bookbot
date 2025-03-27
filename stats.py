@@ -1,6 +1,5 @@
-# filepath is currently hardcoded to the frankenstein.txt file 
-#  inside the book directory.
-filepath = "./books/frankenstein.txt"
+# filepath ignored in favor of sys argy
+#filepath = "./books/frankenstein.txt"
 
 # get_book_text reads the book in the filepath and returns the 
 #  contents as a string in the file_contents variable.
@@ -11,7 +10,7 @@ def get_book_text(filepath):
 
 # get_word_count takes whatever book is hardcoded to filepath, 
 #  counts the words, and returns the number of words
-def get_word_count():
+def get_word_count(filepath):
     output = get_book_text(filepath)
     word_list = output.split() 
     num_words = len(word_list)
@@ -19,7 +18,7 @@ def get_word_count():
 
 # get_character_count is set up to use get_book_text, convert those 
 #  characters to all lower case, and then add and count each character.
-def get_character_count():
+def get_character_count(filepath):
     char_count = {}
     text = get_book_text(filepath).lower()
     for char in text:
